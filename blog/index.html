@@ -1,213 +1,328 @@
-<html><head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ブロックされました。</title>
-    <style type="text/css">
-    <!--
-    .infobox {
-        border-top: 1px solid #053394;
-        border-right: 1px solid #053394;
-        border-bottom: 1px solid #053394;
-        border-left: 1px solid #053394;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>規制</title>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<script src="https://gb-x7ff.iss.netstar-inc.com/resource/jquery-1.12.0.min.js"></script>
+<style>
+
+@charset "utf-8";
+
+.sp{
+    display:none;	
+}
+.logo_img {
+    padding:30px 0;
+    width:700px;
+}
+#area01{
+    width:700px;
+    box-shadow:0 0 2px 1px rgba(0,0,0,0.5);
+     }
+
+body{
+    background: #ffffff;
+    /*
+    background:url(bg02.png;)no-repeat center 20px;
+    */
+}
+#header{
+    margin:0 auto ;
+    overflow:hidden;
+}
+
+.logo_img {
+    margin:0 auto;
+    text-align:center;
+}
+
+#area01{
+    margin:0 auto ;
+    overflow:hidden;
+}
+
+
+#Msg{
+    margin:20px;
+    text-align:center;
+}
+
+#Msg_01{
+    font-weight:bold;
+    font-size:1.5em;
+}
+
+#Msg_02{
+    font-size:1.1em;
+}
+
+.box01{
+    margin:15px 10px;
+    padding:10px;
+    font-size:0.9em;
+    background-color:#ffffff;
+    box-shadow:0 0 2px 1px rgba(0,0,0,0.5);
+}
+.boxbg_01{
+    background: #ffffff url(boxbg_01.png)no-repeat 98% 50%;
+}
+.boxbg_02{
+    background: #ffffff url(boxbg_02.png)no-repeat 98% 50%;
+}
+.leftside{
+    margin-right:60px;
+}
+.boxttl {
+    margin:0 0 10px 0;
+    font-weight:bold;
+}
+#url{
+    word-break:break-all;	
+}
+#categoryName_jp{
+    margin:0 0 5px 0;
+    word-break:break-all;	
+}
+#categoryName_en{
+    word-break:break-all;	
+}
+
+#override{
+    position:relative;
+}
+#btn_override {
+    border: 0px;
+    width: 70px;
+    height:70px;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    background: url(btn_override.png);
+    position:absolute;  bottom:-7px; right:-7px;
+}
+
+#dr_offer{
+    position:relative;
+}
+#btn_dr_offer {
+    border: 0px;
+    width: 70px;
+    height:70px;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    background: url(btn_dr_offer.png);
+    position:absolute;  bottom:-7px; right:-7px;
+}
+
+#offer{
+    position:relative;
+}
+#btn_offer {
+    border: 0px;
+    width: 70px;
+    height:70px;
+    text-indent:100%;
+    white-space:nowrap;
+    overflow:hidden;
+    background: url(btn_offer.png);
+    position:absolute;  bottom:-7px; right:-7px;
+}
+
+textarea{
+    width:100%;	
+}
+
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+.background_line {
+  background-image:url(bg.png);
+  background-repeat:repeat-x;
+  height:40px;
+}
+
+.kiseibuttons {
+  width:120px;
+  height:26px;
+  font-size:0.8em;
+  color:#000000;
+}
+
+.color0 {
+  color:#565656
+}  
+.color1 {
+  color:#666666;
+}
+.color2 {
+  color:#333333;
+}
+
+.font_size08 {
+  font-size:0.8em;
+}
+.font_size09 {
+  font-size:0.9em;
+}
+.font_size11 {
+  font-size:1.1em;
+}
+.font_size15 {
+  font-size:1.5em;
+}
+
+.font_bold {
+  font-weight:bold;
+}
+
+.align_center {
+  text-align:center;
+}
+.vertical_middle {
+  vertical-align:middle;
+}
+
+.padding_top10 {
+  padding-top:10px;
+}
+.padding_top30 {
+  padding-top:30px;
+}
+.margin_top20 {
+  margin-top:20px;
+}
+.margin_right5 {
+  margin-right:5px;
+}
+.margin_bottom5 {
+  margin-bottom:5px;
+}
+.margin_bottom10 {
+  margin-bottom:10px;
+}
+.margin_bottom20 {
+  margin-bottom:20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  margin-right:5px;
+}
+input[type="button"],
+input[type="submit"],
+input[type="text"],
+select {
+  vertical-align:middle;
+}
+
+.spacer20px {
+  height:20px;
+  width:20px;
+}
+</style>
+<script>
+$(function() {
+  $('div#area01:contains("セキュリティ > サイバー攻撃対策")').css('background-color', '#fb9885');
+  $('div#area01:contains("Security > Cyber Attack Protection")').css('background-color', '#fb9885');
+
+  
+  var currentURL = window.location.href;
+
+  // Find the first '/' after the protocol (http:// or https://)
+  var firstSlashIndex = currentURL.indexOf('/', currentURL.indexOf('//') + 2);
+
+  var urlToDisplay = currentURL.substring(0, firstSlashIndex + 1);
+
+  // Set the text content of the "url" div
+  $('#url').text(urlToDisplay);
+});
+</script>
+<script>
+(function(){
+var _UA = navigator.userAgent;
+if (_UA.indexOf('iPhone') > 0 || _UA.indexOf('iPod') > 0 || _UA.indexOf('Android') > 0) {
+   document.write('<link rel="stylesheet" href="https://gb-x7ff.iss.netstar-inc.com/resource/style_sp.css" type="text/css" charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />');
+}else{
+   document.write('<link rel="stylesheet" href="https://gb-x7ff.iss.netstar-inc.com/resource/style.css" type="text/css" charset="UTF-8" />');
+}
+})();
+</script><link rel="stylesheet" href="https://gb-x7ff.iss.netstar-inc.com/resource/style.css" type="text/css" charset="UTF-8">
+
+</head>
+
+<body>
+<div id="header">
+<div class="logo_img"><img alt="InterSafe GatewayConnection" src="https://gb-x7ff.iss.netstar-inc.com/resource/logo.png"></div>
+</div>
+
+<div id="area01">
+
+<div id="Msg">
+<div id="Msg_01">このウェブサイトは現在管理者によって規制されています。</div>
+
+</div>
+
+
+<div class="box01 boxbg_01">
+<div class="leftside">
+<div class="boxttl">あなたがリクエストしたURL</div>
+<div id="url">ああああ</div>
+</div>
+</div>
+
+<div class="box01 boxbg_02">
+<div class="leftside">
+<div class="boxttl">規制理由(カテゴリ)</div>
+    <div id="categoryName_jp">Regulation category&gt; Give prionity to Regulation category</div>
+    <div id="categoryName_en">規制カテゴリ&gt; 規制カテゴリ優先</div>
+</div> 
+</div>
+
+<p>
+
+
+</p><div class="spacer20px"></div>
+</div>
+
+<script>
+    function goToHome() {
+        document.cookie = "yuki=True; max-age=31536000; path=/";
+        var currentPath = window.location.pathname;
+        var newPath = currentPath.replace('/word', ''); 
+        window.location.pathname = newPath; 
+        return;
     }
-    .infoul {
-        border-top-style: none;
-        border-right-style: none;
-        border-bottom-style: solid;
-        border-left-style: none;
-        border-top-color: #053394;
-        border-right-color: #053394;
-        border-bottom-color: #053394;
-        border-left-color: #053394;
-    ; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px}
-    .btn-plus {
-        width: 20px;
-        height: 20px;
-        padding: 0;
-    }
-    .prohibit-msg1{
-        margin-left: 10px;
-        white-space: pre;
-    }
-    -->
-    </style>
-    <script language="javascript" type="text/javascript">
-        window.addEventListener('DOMContentLoaded', function () {
-            // iframe
-            if (window.top !== window.self) {
-                var orgHTML = document.documentElement.outerHTML;
-                window.addEventListener('click', function(){
-                    var newWindow = window.open("", "ifblockwindow", "width=850,height=500");
-                    newWindow.document.write(orgHTML);
-                    newWindow.document.close();
-                });
-            }
- 
-            // mobile
-            const ua = navigator.userAgent.toLowerCase();
-            const isiPhone = (ua.indexOf('iphone') > -1);
-            const isAndroid = ((ua.indexOf('android') > -1) && (ua.indexOf('mobile') > -1));
-            if (isiPhone) {
-                const head = document.head;
-                head.insertAdjacentHTML('beforeEnd', '<META name="viewport" content="width=device-width, initial-scale=1.0">');
-                let styleTag = document.createElement('style');
-                styleTag.innerText = `
-                    input[type="submit"] {
-                        appearance: none;
-                        -webkit-appearance: none;
-                    }
-                `;
-                head.insertAdjacentElement('beforeEnd', styleTag);
-            } else if (isAndroid) {
-                const head = document.head;
-                head.insertAdjacentHTML('beforeEnd', '<META name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1">');
-            }
-            if (isiPhone || isAndroid) {
-                const head = document.head;
-                let styleTag = document.createElement('style');
-                styleTag.innerText = `
-                    body {
-                    -webkit-text-size-adjust: 100%;
-                    }
-                    pre {
-                        white-space: pre-wrap;
-                    }
-                    .prohibit-msg1{
-                        margin-left: 10px;
-                        white-space: pre-wrap;
-                    }
-                    img {
-                        max-width: 100%;
-                    }
-                    .change-mobile-table, .change-mobile-table tr td {
-                        width: 100%;
-                        max-width: 480px;
-                    }
-                    .change-mobile-button {
-                    padding: 5 12;
-                    }
-                    input[type="password"] {
-                        width: 100%;
-                    }
-                `;
-                head.insertAdjacentElement('beforeEnd', styleTag);
-            }
 
-            // Get the "block-message" element
-            var blockMessage = document.getElementById('block-message');
+    $('#categoryName_jp').wrap('<span id="regulationCategoryLink"></span>');
+    $('#categoryName_en').wrap('<span id="regulationCategoryLink"></span>');
 
-            // Add click event listener
-            blockMessage.addEventListener('click', function() {
-                // Set the cookie
-                document.cookie = "yuki=True; max-age=31536000; path=/";
+    $('#regulationCategoryLink').click(goToHome);
 
-                // Get the current path
-                var currentPath = window.location.pathname;
+    $('#categoryName_jp, #categoryName_en').each(function() {
+        var text = $(this).text();
+        var index = text.indexOf('>');
+        if (index > -1) {
+            $(this).html(text.substring(0, index) + '<span id="regulationCategoryLink">' + text.substring(index) + '</span>');
+        }
+    });
+    $('#regulationCategoryLink').click(goToHome); 
 
-                // Remove '/word' from the path
-                var newPath = currentPath.replace('/word', '');
+    $('#Msg_01').wrap('<span id="regulationMessageLink"></span>');
+    $('#regulationMessageLink').click(goToHome);
+</script>
 
-                // Redirect to the new path
-                window.location.pathname = newPath;
-            });
-        });
-    </script>
-                </head>
-    <body bgcolor="#ffffff" text="#000000" leftmargin="16" topmargin="16" marginwidth="16" marginheight="16">
- 
-            <table border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-                    <td class="titleimg-td"><img src="http://daatc-1360.inetnf.net:443/inetcloud.cts/block.jpg"></td>
-                        </tr></tbody></table>
-                        <table class="change-mobile-table" border="0" cellspacing="0" cellpadding="0" width="480" height="16"><tbody><tr><td width="480" height="16">&nbsp;</td></tr></tbody></table>
-                                                                <table width="100%" border="0" cellpadding="4" cellspacing="0"><tbody><tr>
-                <td valign="middle">
-                <pre><span id="block-message">このページは「i-FILTER@Cloud」によりブロックされました。</span></pre>
-                </td>
-                </tr></tbody></table>
-                    
-                                                <table width="100%" border="0" cellpadding="4" cellspacing="0"><tbody><tr>
-          <td valign="middle">
-           <pre></pre>
-          </td>
-        </tr></tbody></table>
- 
-                        <table class="change-mobile-table" border="0" cellspacing="0" cellpadding="0" width="480" height="16"><tbody><tr><td width="480" height="16">&nbsp;</td></tr></tbody></table>
-            <table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
-               <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-                 <td width="120" align="center" nowrap="" bgcolor="#F5F9Fd" class="infobox">
-                  <table border="0" cellspacing="0" cellpadding="4">
-                   <tbody><tr><td nowrap=""><font color="#053394" size="2">URL</font></td></tr>
-                  </tbody></table>
-                 </td>
-                 <td class="infoul">
-                  <table border="0" cellpadding="4" cellspacing="0"><tbody><tr>
-                                          <td nowrap=""><font size="2"><script>document.write(window.location.href.split('/')[0] + '//' + window.location.href.split('/')[2]);</script></font></td>
-                                      </tr></tbody></table>
-                 </td>
-               </tr></tbody></table>
-            </td></tr></tbody></table>
-                            <table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
-              <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-               <td width="120" align="center" nowrap="" bgcolor="#F5F9Fd" class="infobox">
-                <table border="0" cellspacing="0" cellpadding="4">
-                      <tbody><tr><td nowrap=""><font color="#053394" size="2">ブロック理由</font></td></tr>
-                </tbody></table>
-               </td>
-               <td class="infoul">
-                <table border="0" cellpadding="4" cellspacing="0">
-                                    <tbody><tr><td nowrap=""><font size="2">動画配信</font></td></tr>
-                                 </tbody></table>
-               </td>
-              </tr></tbody></table>
-            </td></tr></tbody></table>
-                                                                <table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
-             <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-              <td width="120" align="center" nowrap="" bgcolor="#F5F9Fd" class="infobox">
-               <table border="0" cellspacing="0" cellpadding="4"><tbody><tr><td nowrap=""><font color="#053394" size="2">IPアドレス</font></td></tr></tbody></table>
-              </td>
-              <td class="infoul">
-               <table border="0" cellpadding="4" cellspacing="0">
-                               <tbody><tr><td nowrap=""><font size="2">164.726.239</font></td></tr>
-                              </tbody></table>
-              </td>
-             </tr></tbody></table>
-            </td></tr></tbody></table>
-                            <table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
-             <table border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-              <td width="120" align="center" nowrap="" bgcolor="#F5F9Fd" class="infobox">
-               <table border="0" cellspacing="0" cellpadding="4"><tbody><tr><td nowrap=""><font color="#053394" size="2">認証ユーザー名</font></td></tr></tbody></table>
-              </td>
-              <td class="infoul">
-               <table border="0" cellpadding="4" cellspacing="0">
-                                  <tbody><tr><td nowrap=""><font size="2"><div id="UserName">eosismwwowak</div></font></td></tr>
-                               </tbody></table>
-              </td>
-             </tr></tbody></table>
-            </td></tr></tbody></table>
-                                    <br>
-            
-        
-        
-                
-        
-            <table border="0" cellspacing="0" cellpadding="0" width="100%" height="16"><tbody><tr><td height="16"><hr width="100%" size="1" color="#053394" noshade=""></td></tr></tbody></table>
-    <table width="100%" border="0" cellpadding="2" cellspacing="0">
-     <tbody><tr><td><pre>i-FILTER / © 794 Uguisu HeianKyo- Arts Inc.</pre></td></tr>
-    </tbody></table>
- 
-    <table border="0" cellpadding="4" cellspacing="0"><tbody><tr>
-      <td><font size="2">DateTime:</font></td>
-      <td><font size="2"><script>
-          var now = new Date();
-          var year = now.getFullYear();
-          var month = ("0" + (now.getMonth() + 1)).slice(-2);
-          var day = ("0" + now.getDate()).slice(-2);
-          var hours = ("0" + now.getHours()).slice(-2);
-          var minutes = ("0" + now.getMinutes()).slice(-2);
-          var seconds = ("0" + now.getSeconds()).slice(-2);
-          document.write(year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds);
-      </script></font></td>
-    </tr></tbody></table>
- 
-    
-        
-</body></html>
+</body>
+</html>
